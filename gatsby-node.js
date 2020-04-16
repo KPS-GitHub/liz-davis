@@ -2,15 +2,22 @@ const Promise = require('bluebird')
 const path = require('path')
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+  createRedirect({
+    fromPath: "/home/", 
+    toPath: "/", 
+    isPermanent: true, 
+    force: true,
+    redirectInBrowser: true
+  });
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const pageTemplate = path.resolve('./src/templates/page.js')
     resolve(
       graphql(
         `
           {
-            allContentfulBlogPost {
+            allContentfulPage {
               edges {
                 node {
                   title
@@ -26,13 +33,13 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const posts = result.data.allContentfulBlogPost.edges
-        posts.forEach(post => {
+        const pages = result.data.allContentfulPage.edges
+        pages.forEach(page => {
           createPage({
-            path: `/blog/${post.node.slug}/`,
-            component: blogPost,
+            path: `/${page.node.slug}/`,
+            component: pageTemplate,
             context: {
-              slug: post.node.slug,
+              slug: page.node.slug,
             },
           })
         })
