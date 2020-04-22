@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './container'
+import { Container } from 'react-bootstrap'
 import Navigation from './navigation'
 
 class Template extends React.Component {
