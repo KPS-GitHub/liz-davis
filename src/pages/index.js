@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-bootstrap'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+import Layout from '../components/Layout/layout'
 
 const ContentCont = styled(Container)`
   margin: 0 10vw;
