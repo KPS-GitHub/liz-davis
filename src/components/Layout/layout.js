@@ -29,20 +29,29 @@ const WrapCont = styled(Container)`
     background-size: cover;
   }
   .footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
     background: #323232;
-    a {
-      color: white;
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      :hover {
-        background: black;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 100%;
+    .footer-links {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #323232;
+      a {
+        color: white;
+        display: block;
+        padding: 20px;
+        text-decoration: none;
       }
+    }
+    .footer-cpyrt {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: white;
+      font-size: .8rem;
     }
   }
 `
@@ -71,8 +80,13 @@ const Layout = ({ children }) => {
       <div className="hero-image" />
       {children}
       <div className="footer">
-        <Link to={`/`}>Home</Link>
-        <Link to={`/`}>Contact</Link>
+        <div className="footer-links">
+          <Link to={`/`}>Home</Link>
+          <Link to={`/`}>Contact</Link>
+        </div>
+        <div className="footer-cpyrt">
+          <p>Copyright © 2020 Elizabeth Davis, MPA, MB, ART-BC, LCAT · All Rights Reserved</p>
+        </div>
       </div>
     </WrapCont>
   )
