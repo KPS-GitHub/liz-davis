@@ -33,8 +33,15 @@ const ContentCont = styled(Container)`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        box-shadow: 5px 5px 10px black;
+        :hover {
+          box-shadow: 2px 2px 5px black;
+        }
         h3 {
           margin-bottom: 0;
+        }
+        p {
+          text-align: center;
         }
       }
     }
