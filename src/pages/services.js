@@ -21,7 +21,7 @@ const ContentDiv = styled.div`
       justify-content: center;
       align-items: center;
       color: white;
-      font-size: 5rem;
+      font-size: 4rem;
       position: relative;
       h3 {
         position: relative;
@@ -38,6 +38,13 @@ const ContentDiv = styled.div`
     }
     .service-copy {
       margin: 2vw 10vw;
+      h5 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      p, ul {
+        line-height: 22px;
+      }
     }
     .bold {
       font-weight: bold;
@@ -54,6 +61,30 @@ const ContentDiv = styled.div`
   #art-therapy {
     .title-wrap {
       background-image: url(https://testing.elizabethdavis-emdr.com/wp-content/uploads/2019/02/early-header-additions-7-e1549736287661.png);
+      background-repeat: no-repeat;
+      background-position: 0% 20%;
+      background-size: cover;
+    }
+  }
+  #sensorimotor-therapy {
+    .title-wrap {
+      background-image: url(https://testing.elizabethdavis-emdr.com/wp-content/uploads/2018/09/Sensorimotor-Psychotherapy.jpg);
+      background-repeat: no-repeat;
+      background-position: 0% 20%;
+      background-size: cover;
+    }
+  }
+  #play-therapy {
+    .title-wrap {
+      background-image: url(https://testing.elizabethdavis-emdr.com/wp-content/uploads/2018/08/5b58f567a671d7836b58705f_shutterstock_425325679.jpg);
+      background-repeat: no-repeat;
+      background-position: 0% 72%;
+      background-size: cover;
+    }
+  }
+  #progressive-counting {
+    .title-wrap {
+      background-image: url(https://testing.elizabethdavis-emdr.com/wp-content/uploads/2018/09/numbers.jpg);
       background-repeat: no-repeat;
       background-position: 0% 20%;
       background-size: cover;
@@ -136,27 +167,54 @@ const ServicePage = props => {
           </div>          
         </div>
 
-        <div className="service-wrap">
-          <img src="" alt="" />
-          <h3 id=""></h3>
-          <div className="content-wrap">
-            <p></p>
+        <div id="sensorimotor-therapy" className="service-wrap">
+          <div className="title-wrap">
+              <h3>Sensorimotor Therapy</h3>
+            <div className="darken-overlay" />
+          </div>
+          <div className="service-copy">
+            <div className="content-wrap">
+              <p>Sensorimotor psychotherapy is essentially body-based talk therapy. </p>
+              <p>This therapy approach sees the body as having an innate source of intelligence as well as holding the recordings of experiences.  Our nervous system and habitual patterns of movement and posture tell the story of our experience and conditioning. Trained clinicians use mindful tracking of the body, as well as trauma resolution methods to help clients process through stuck traumatic states.</p>
+              <p>Sensorimotor psychotherapy therapy benefits people who are struggling with anxiety, depression, anger management, PTSD, an inability to sustain meaningful relationships, and more.  It enables them to self-regulate effect and to become less reactive and more proactive in their relationships, work, and families.</p>
+              <p>The ultimate goal of sensorimotor therapy is to transform traumatic memories into strengths and resources for the client.  It can be used as a first-choice approach, or it can be a very effective adjunct to an EMDR- or PC-based intensive therapy retreat.</p>
+              <p className="bold">As a trauma therapist who specializes in the integration of trauma resolution methods, I work with my clients to determine if a sensorimotor approach will help them with their specific needs.  In most of the work I do as an EMDR, and PC therapist, I integrate sensorimotor psychotherapy to increase the effectiveness of these proven trauma resolutions approaches. In some cases, I use sensorimotor as a first approach, especially when my client is overwhelmed and sensitive to emotional flooding. Additionally, clients may find beginning with a body based processing approach more gentile and manageable.</p>
+              <p className="bold">For more information, visit <a href="www.sensorimotorpsychotherapy.org">www.sensorimotorpsychotherapy.org</a>.</p>
+            </div>
           </div>
         </div>
 
-        <div className="service-wrap">
-          <img src="" alt="" />
-          <h3 id=""></h3>
-          <div className="content-wrap">
-            <p></p>
+        <div id="play-therapy" className="service-wrap">
+          <div className="title-wrap">
+              <h3>Play Therapy</h3>
+            <div className="darken-overlay" />
+          </div>
+          <div className="service-copy">
+            <div className="content-wrap">
+              <h5>Structural & Therapeutic Play Therapy</h5>
+              <p>Structured play therapy is a directive style of play therapy that guides the child through play to address traumatic memories so that they can be processed, and the child heal.</p>
+              <p>Play therapy is primarily used to help children ages 3 to 12, although it is sometimes used with adults.  Therapeutic play takes place in a safe, comfortable room with open opportunities to explore, thus encouraging free expressing and enabling the therapist to observe the client’s choices, decisions, and play style.</p>
+              <p>Children with social or emotional deficits benefit from play therapy and learn to communicate better, change their behavior, develop problem-solving skills, and relate to others more effectively.  It is effective in helping children with academic and social problems, learning disabilities, behavioral disorders, anxiety, depression, grief, or anger as well as those with ADD or who are on the autism spectrum.</p>
+              <p>Play therapy is often integrated into EMDR therapy or PC as a powerful strategy for helping children heal from traumatic experience. Additionally, this therapy modality is ideal for helping children learn emotional regulation skills, develop insight, and create feelings of safety, that are needed before trauma healing can begin.</p>
+              <p>When I work with children initially, I partner with parents and caregivers to establish a thorough understanding of the challenges the child is facing, history of the symptoms and a detailed assessment. My focus is on understanding the root cause of the child’s symptoms, whether it is anxiety, behavioral in nature, or school based.   In our playroom I work with the child, and sometimes with the child and caregiver, to develop an increased feeling of esteem, safe attachment, and skills and tools to express emotions and beliefs.  The use of sand tray, puppetry, and pretend play is used as a part of the child’s natural language and process for developing these skills and working through hard issues and challenges. With strong caregiver involvement, I help families develop comprehensive approaches that they take home and utilize to enable the parent and/or caregiver to become healing agents in their child’s life.</p>
+              <h5>Sand Therapy</h5>
+              <p>Sand Tray Therapy is a therapy that helps children and adults create distance in a safe and healthy way from their trauma experience. Sand tray therapy can be integrated with EMDR and Parts work, to help children and adults reprocess their trauma in a way that feels safer or seems developmentally appropriate. In addition to creating distance to the trauma memory, sand tray work can help clients develop insight, through the development of archetypal symbols that embody the meaning of their journey, (Jungian psychotherapy)</p>
+            </div>
           </div>
         </div>
 
-        <div className="service-wrap">
-          <img src="" alt="" />
-          <h3 id=""></h3>
-          <div className="content-wrap">
-            <p></p>
+        <div id="progressive-counting" className="service-wrap">
+          <div className="title-wrap">
+              <h3>Progressive Counting</h3>
+            <div className="darken-overlay" />
+          </div>
+          <div className="service-copy">
+            <div className="content-wrap">
+              <p>Progressive Counting (PC) is a specialized procedure for resolving trauma or loss.  With PC, the client visualizes a series of progressively longer “movies’ of the trauma memory while the therapist counts out loud.  The “movie” of the trauma is meant to allow the client to get distance from the memory, understanding it as “a memory”, while at the same time thoroughly reviewing it and processing through any emotional blockages.  PC therapy always ends with positive or neutral endings where the client can come to better understanding the trauma is over and that they can move on.</p>
+              <p>PC is about as effective as EMDR and typically doesn’t take quite as long as EMDR.  Both EMDR and PC are the best tolerated and most efficient of the proven-effective trauma healing methods.  Both methods successfully treat troubling symptoms such as anxiety, depression, guilt, anger, and post-traumatic reactions.  They also enhance confidence and self-esteem.</p>
+              <p>PC Can help to enhance work-elated performance; reduce anxiety, anger, sadness, and other troubling emotions; overcome problem behaviors and habits; improve relationships; and help people to heal from trauma and loss.</p>
+              <p>I may elect to use PC with my clients instead of EMDR due to the nature of a trauma memory, the ease of use for the client, (especially children), and the effectiveness of PC with “big T traumas”.  I find that PC is often more effective and more efficient. With both tools at my disposal, EMDR and PC, I can help my clients work through their traumatic past more effectively.</p>
+            </div>
           </div>
         </div>
 
