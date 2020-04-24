@@ -97,7 +97,6 @@ const ServicePage = props => {
   return (
     <Layout>
       <Helmet>
-        <title>Elizabeth Davis - EMDR and Art Therapy</title>
         <style type="text/css">{`
           body {
             display: contents;

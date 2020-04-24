@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  console.log(data)
+  // console.log(data)
   const { logo } = data
 
   return (

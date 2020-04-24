@@ -17,22 +17,21 @@ const ContentDiv = styled.div`
 const AboutMe = props => {
   return (
     <Layout>
-                <Helmet>
-            <title>Elizabeth Davis - EMDR and Art Therapy</title>
-            <style type="text/css">{`
-              body {
-                display: contents;
-              }
-              #gatsby-focus-wrapper {
-                width: 100%;
-                height: 100%;
-              }
-              #___gatsby {
-                width: 100%;
-                height: 100%;
-              }
-            `}</style>
-          </Helmet>
+      <Helmet>
+        <style type="text/css">{`
+          body {
+            display: contents;
+          }
+          #gatsby-focus-wrapper {
+            width: 100%;
+            height: 100%;
+          }
+          #___gatsby {
+            width: 100%;
+            height: 100%;
+          }
+        `}</style>
+      </Helmet>
       <ContentDiv>
         <img src="https://testing.elizabethdavis-emdr.com/wp-content/uploads/2020/04/elizabeth-davis.jpeg" alt="Elizabeth Davis headshot" />
         

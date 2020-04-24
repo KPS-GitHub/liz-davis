@@ -29,6 +29,8 @@ module.exports = {
     `gatsby-plugin-netlify`,
     'react-bootstrap',
     'bootstrap',
+    'styled-components',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
