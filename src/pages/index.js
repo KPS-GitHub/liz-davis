@@ -254,7 +254,7 @@ class RootIndex extends React.Component {
 
             <div className="emdr-row">
               <div className="darken-overlay" />
-              <Link to={`/`}>
+              <Link to={`/services#emdr`}>
                 <div className="emdr-div">
                   <h3>EMDR</h3>
                   <p>EMDR (Eye Movement Desensitization and Reprocessing) is a psychotherapy that enables people to heal from the symptoms and emotional distress that are the result of disturbing life experiences.</p>
@@ -263,7 +263,7 @@ class RootIndex extends React.Component {
             </div>
 
             <div className="services-row-1">
-              <Link to={`/`} className="art-link">
+              <Link to={`/services#art-therapy`} className="art-link">
                 <div className="art-div">  
                   <div className="art-copy">
                     <h3>Art Therapy</h3>
