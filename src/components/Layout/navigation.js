@@ -21,7 +21,7 @@ const Wrap = styled.div`
 const Navigation =  () => (
   <Wrap>
     <Link to="/">Home</Link>
-    <Link to="/">About Me</Link>
+    <Link to="/about-me">About Me</Link>
     <Link to="/">Services</Link>
     <Link to="/">Contact</Link>
     <Link to="/">Other Pages?</Link>
