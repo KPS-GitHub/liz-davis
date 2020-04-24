@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Container } from 'react-bootstrap'
 import Navigation from './navigation'
 import Img from 'gatsby-image'
 
 
-const WrapCont = styled(Container)`
+const WrapDiv = styled.div`
   margin: 0;
   font-family: 'Source Sans Pro',sans-serif;
   .logo-wrap {
@@ -72,7 +71,7 @@ const Layout = ({ children }) => {
   const { logo } = data
 
   return (
-    <WrapCont>
+    <WrapDiv>
       <div className="logo-wrap">
         <Link to={`/`}><Img fluid={logo.fluid} alt={logo.description} /></Link> 
       </div>
@@ -88,7 +87,7 @@ const Layout = ({ children }) => {
           <p>Copyright © 2020 Elizabeth Davis, MPA, MB, ART-BC, LCAT · All Rights Reserved</p>
         </div>
       </div>
-    </WrapCont>
+    </WrapDiv>
   )
 }
 
