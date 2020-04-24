@@ -11,6 +11,7 @@ const WrapCont = styled(Container)`
   font-family: 'Source Sans Pro',sans-serif;
   .logo-wrap {
     width: 45%;
+    margin-left: 27.5%;
     a {
       display: block;
       padding: 10px 0;
