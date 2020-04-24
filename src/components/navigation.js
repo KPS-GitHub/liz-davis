@@ -1,18 +1,31 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-export default () => (
-  <nav role="navigation">
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/">Placeholder</Link>
-      </li>
-      <li>
-        <Link to="/">Placeholder</Link>
-      </li>
-    </ul>
-  </nav>
+const Wrap = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background: #323232;
+  a {
+    text-decoration: none;
+    padding: .5rem 1rem;
+    color: white;
+    font-family: 'Source Sans Pro',sans-serif;
+    :hover {
+      background: black;
+    }
+  }
+`
+
+const Navigation =  () => (
+  <Wrap>
+    <Link to="/">Home</Link>
+    <Link to="/">About Me</Link>
+    <Link to="/">Services</Link>
+    <Link to="/">Other Pages?</Link>
+    <Link to="/">Other Pages?</Link>
+  </Wrap>
 )
+
+export default Navigation
