@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout/layout'
+import Tile from '../components/Tile'
 
 const ContentDiv = styled.div`
   margin: 5vw 10vw 15vw 10vw;
@@ -50,7 +51,7 @@ const ContentDiv = styled.div`
     }
   }
 
-  .services-row-1 {
+  .row-1 {
     margin: 3rem 0;
     display: flex;
     flex-wrap: nowrap;
@@ -139,7 +140,7 @@ const ContentDiv = styled.div`
     }
   }
 
-  .services-row-2 {
+  .row-2 {
     margin: 3rem 0;
     display: flex;
     flex-wrap: nowrap;
@@ -228,9 +229,9 @@ const ContentDiv = styled.div`
   }
 `
 
-class RootIndex extends React.Component {
-  render() {
-
+const HomePage = ({ data }) => {
+    const serviceData = data.services.edges.map(p => p.node);
+    const tileData = data.tiles.edges.map(p => p.node);
     return (
       <Layout >
         <div style={{ background: 'white' }}>
@@ -252,6 +253,13 @@ class RootIndex extends React.Component {
           </Helmet>
           <ContentDiv className="wrapper">
 
+            {tileData.map(tile => {
+              const imageUrl = tile.backgroundImage ? tile.backgroundImage.file.url : null
+              return(
+                <Tile title={tile.title} linkTo={tile.page.slug} imgUrl={imageUrl} />
+              )
+            })}
+
             <div className="emdr-row">
               <div className="darken-overlay" />
               <Link to={`/services#emdr`}>
@@ -262,7 +270,7 @@ class RootIndex extends React.Component {
               </Link>
             </div>
 
-            <div className="services-row-1">
+            <div className="row-1">
               <Link to={`/services#art-therapy`} className="art-link">
                 <div className="art-div">  
                   <div className="art-copy">
@@ -284,7 +292,7 @@ class RootIndex extends React.Component {
               </Link>
             </div>
 
-            <div className="services-row-2">
+            <div className="row-2">
               <Link to={`/services#play-therapy`}>
                 <div className="play-div">  
                   <div className="play-copy">
@@ -310,16 +318,56 @@ class RootIndex extends React.Component {
         </div>
       </Layout>
     )
-  }
 }
 
-export default RootIndex
+export default HomePage
 
 export const pageQuery = graphql`
   query HomeQuery {
     contentfulPage(title: {eq: "Home"}) {
       title
       slug
+    }
+    services: allContentfulService(sort: {order: ASC, fields: order}) {
+      edges {
+        node {
+          title
+          tag
+          order
+          id
+          briefDescription {
+            briefDescription
+          }
+          fullDescription {
+            json
+          }
+          tileImage {
+            title
+            fluid {
+              src
+            }
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+    tiles: allContentfulTile(sort: {fields: order, order: ASC}) {
+      edges {
+        node {
+          title
+          backgroundImage {
+            file {
+              url
+            }
+          }
+          page {
+            title
+            slug
+          }
+        }
+      }
     }
   }
 `
