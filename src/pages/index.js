@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
-import Helmet from 'react-helmet'
 import Layout from '../components/Layout/layout'
 import Tile from '../components/Tile'
 
@@ -18,22 +17,6 @@ const HomePage = ({ data }) => {
     return (
       <Layout >
         <div style={{ background: 'white' }}>
-          <Helmet>
-            <title>Elizabeth Davis - EMDR and Art Therapy</title>
-            <style type="text/css">{`
-              body {
-                display: contents;
-              }
-              #gatsby-focus-wrapper {
-                width: 100%;
-                height: 100%;
-              }
-              #___gatsby {
-                width: 100%;
-                height: 100%;
-              }
-            `}</style>
-          </Helmet>
           <ContentDiv className="wrapper">
 
             {tileData.map(tile => {
