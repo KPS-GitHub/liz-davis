@@ -3,14 +3,24 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const Wrap = styled(Link)`
+    text-decoration: none;
+    width: 47%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
     .tile-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         width: 100%;
-        height: 100%;        
+        height: 100%;     
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        box-shadow: 5px 5px 10px black;
+        box-shadow: 5px 5px 10px black;       
         :hover {
             box-shadow: 2px 2px 5px black;
         }
@@ -22,12 +32,11 @@ const Wrap = styled(Link)`
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1rem 3rem;
             h3 {
-                margin-bottom: 0;
-            }
-            p {
+                margin: 0;
                 text-align: center;
+                font-size: 2rem;
+                padding: 0 1rem;
             }
         }
         .darken-overlay {
