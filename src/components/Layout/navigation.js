@@ -22,7 +22,7 @@ const Navigation =  () => (
   <Wrap>
     <Link to="/">Home</Link>
     <Link to="/about-me">About Me</Link>
-    <Link to="/services">Services</Link>
+    <Link to="/clinical-services">Services</Link>
     <Link to="/">Contact</Link>
     <Link to="/">Other Pages?</Link>
   </Wrap>
