@@ -96,21 +96,6 @@ const ContentDiv = styled.div`
 const ServicePage = props => {
   return (
     <Layout>
-      <Helmet>
-        <style type="text/css">{`
-          body {
-            display: contents;
-          }
-          #gatsby-focus-wrapper {
-            width: 100%;
-            height: 100%;
-          }
-          #___gatsby {
-            width: 100%;
-            height: 100%;
-          }
-        `}</style>
-      </Helmet>
       <ContentDiv>
 
         <h1>Services</h1>

@@ -9,35 +9,26 @@ const ContentDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  img {
-    width: 25%;
+  .content-wrap {
+    img {
+      width: 10rem;
+      float: left;
+      margin: 0 25px 10px 0;
+    }
+    p {
+      margin-top: 0;
+    }
   }
 `
  
 const AboutMe = props => {
   return (
     <Layout>
-      <Helmet>
-        <style type="text/css">{`
-          body {
-            display: contents;
-          }
-          #gatsby-focus-wrapper {
-            width: 100%;
-            height: 100%;
-          }
-          #___gatsby {
-            width: 100%;
-            height: 100%;
-          }
-        `}</style>
-      </Helmet>
-      <ContentDiv>
-        <img src="https://testing.elizabethdavis-emdr.com/wp-content/uploads/2020/04/elizabeth-davis.jpeg" alt="Elizabeth Davis headshot" />
-        
+      <ContentDiv>        
         <h1>About Me</h1>
 
         <div className="content-wrap">
+          <img src="https://testing.elizabethdavis-emdr.com/wp-content/uploads/2020/04/elizabeth-davis.jpeg" alt="Elizabeth Davis headshot" />
           <p>I’m a board certified, New York State licensed art therapist with 20 years experience working in the field of creative arts therapy and trauma.</p>
           <p>Before becoming a creative arts therapist, I attained my master’s in fine arts (MFA) with a concentration in photography. As an experimental art photographer whose focus has been on the relationship between human psychology and visual expression, it was a natural progression for me to come to the field of art therapy.</p>
           <p>I began my clinical practice as an art therapist providing direct services to children and families at multiple levels of care including onsite (wrap around); residential & outpatient settings; and school based services in Erie County, New York.</p>

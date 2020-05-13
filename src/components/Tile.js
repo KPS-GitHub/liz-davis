@@ -48,6 +48,10 @@ const Wrap = styled(Link)`
             background: rgba(0,0,0,0.6);
         }
     }
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+        height: 10rem;
+    }
 `
 
 const Tile = ({ title, linkTo, imgUrl }) => {
