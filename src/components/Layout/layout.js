@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Navigation from './navigation'
 import Img from 'gatsby-image'
@@ -72,6 +73,22 @@ const Layout = ({ children }) => {
 
   return (
     <WrapDiv>
+      <Helmet>
+        <title>Elizabeth Davis - EMDR and Art Therapy</title>
+        <style type="text/css">{`
+          body {
+            display: contents;
+          }
+          #gatsby-focus-wrapper {
+            width: 100%;
+            height: 100%;
+          }
+          #___gatsby {
+            width: 100%;
+            height: 100%;
+          }
+        `}</style>
+      </Helmet>
       <div className="logo-wrap">
         <Link to={`/`}><Img fluid={logo.fluid} alt={logo.description} /></Link> 
       </div>
