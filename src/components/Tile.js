@@ -20,9 +20,12 @@ const Wrap = styled(Link)`
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        box-shadow: 5px 5px 10px black;       
+        box-shadow: 5px 5px 10px black;
+        transform: scale(1); 
+        transition: transform .5s ease;      
         :hover {
-            box-shadow: 2px 2px 5px black;
+            transform: scale(1.1);
+            transition: transform .5s ease;  
         }
         .copy {
             position: relative;
