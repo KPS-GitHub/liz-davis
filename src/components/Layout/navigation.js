@@ -13,6 +13,7 @@ const Wrap = styled.div`
     position: relative;
     top: 0;
     text-decoration: none;
+    text-align: center;
     padding: .75rem 1rem;
     color: white;
     font-family: 'Source Sans Pro',sans-serif;
@@ -22,12 +23,13 @@ const Wrap = styled.div`
   }
   .service-item {
     position: relative;
-    width: 7rem;
+    width: 10.5rem;
     .drop-parent {      
       position: relative;
       top: 12px;
       padding: .75rem 1rem;
       text-decoration: none;
+      text-align: center;
       color: white;
       font-family: 'Source Sans Pro',sans-serif;
       :hover {
@@ -61,7 +63,7 @@ const Wrap = styled.div`
         color: white;
         font-family: 'Source Sans Pro',sans-serif;
         :hover {
-          background: black;
+          text-decoration: underline;
         }
       }
     }
@@ -93,7 +95,7 @@ const Navigation =  ({ services }) => {
       <Link className="menu-item" to="/about-me">About Me</Link>
       <div className="service-item">
         <Link to="/clinical-services" className="drop-parent">
-          {`Services `}          
+          {`Clinical Services `}          
         </Link>
         <button onClick={() => toggleServiceDrop()}>
           <FaCaretDown />
@@ -102,13 +104,15 @@ const Navigation =  ({ services }) => {
           {services.map((service, i) => {
             const servId = service.title.toLowerCase().replace(/\s+/g, '-');            
             return(
-              <Link to={`/clinical-services#`+servId}>{service.title}</Link>
+              <Link to={`/clinical-services#`+servId} onClick={() => toggleServiceDrop()}>{service.title}</Link>
             )
           })}
         </div>
       </div>
-      <Link className="menu-item" to="/">Contact</Link>
-      <Link className="menu-item" to="/">Other Pages?</Link>
+      <Link className="menu-item" to="/professional-services">Professional Services</Link>
+      <Link className="menu-item" to="/intensive-retreats">Intensive Retreats</Link>
+      <Link className="menu-item" to="/training">Training</Link>
+      <Link className="menu-item" to="/contact">Contact</Link>
     </Wrap>
   )
 }
