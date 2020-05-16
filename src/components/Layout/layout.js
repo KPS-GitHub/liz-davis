@@ -66,10 +66,19 @@ const Layout = ({ children }) => {
           ...GatsbyContentfulFluid
         }
       }
+      services: allContentfulService(sort: {fields: order, order: ASC}) {
+        edges {
+          node {
+            title
+          }
+        }
+      }
     }
   `)
   // console.log(data)
-  const { logo } = data
+  const { logo, services } = data
+  const servArr = services.edges.map(p => p.node);
+
 
   return (
     <WrapDiv>
@@ -92,7 +101,7 @@ const Layout = ({ children }) => {
       <div className="logo-wrap">
         <Link to={`/`}><Img fluid={logo.fluid} alt={logo.description} /></Link> 
       </div>
-      <Navigation />
+      <Navigation services={servArr} />
       <div className="hero-image" />
       {children}
       <div className="footer">
