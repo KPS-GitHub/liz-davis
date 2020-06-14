@@ -95,8 +95,10 @@ const Layout = ({ children }) => {
           #___gatsby {
             width: 100%;
             height: 100%;
+            overflow: hidden;
           }
         `}</style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
       </Helmet>
       <div className="logo-wrap">
         <Link to={`/`}><Img fluid={logo.fluid} alt={logo.description} /></Link> 

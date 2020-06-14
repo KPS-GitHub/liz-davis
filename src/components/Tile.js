@@ -4,8 +4,8 @@ import { Link } from 'gatsby';
 
 const Wrap = styled(Link)`
     text-decoration: none;
-    width: 47%;
-    height: 20rem;
+    // width: 47%;
+    height: 13rem;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,14 +1,29 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import { Container, Row, Col } from 'react-bootstrap'
 import Layout from '../components/Layout/layout'
 import Tile from '../components/Tile'
+import Testimonials from '../components/Testimonials'
 
 const ContentDiv = styled.div`
-  margin: 5vw 10vw 15vw 10vw;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 12rem;
+  .intro {
+    width: 50%;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .tiles-wrap {
+    width: 90%;
+    // display: flex;
+  }
 `
 
 const HomePage = ({ data }) => {
@@ -19,12 +34,24 @@ const HomePage = ({ data }) => {
         <div style={{ background: 'white' }}>
           <ContentDiv className="wrapper">
 
-            {tileData.map(tile => {
-              const imageUrl = tile.backgroundImage ? tile.backgroundImage.file.url : null
-              return(
-                <Tile title={tile.title} linkTo={tile.page.slug} imgUrl={imageUrl} />
-              )
-            })}
+            <div className="intro">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <Container className="tiles-wrap">
+              <Row>
+                {tileData.map(tile => {
+                  const imageUrl = tile.backgroundImage ? tile.backgroundImage.file.url : null
+                  return(
+                    <Col sm={6}>
+                      <Tile title={tile.title} linkTo={tile.page.slug} imgUrl={imageUrl} />
+                    </Col>
+                  )
+                })}
+              </Row>
+            </Container>
+
+            <Testimonials />
 
           </ContentDiv>
         </div>
