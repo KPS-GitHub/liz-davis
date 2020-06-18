@@ -10,12 +10,15 @@ const Wrap = styled(Link)`
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
+    :hover {
+      text-decoration: none;
+    }
     .tile-div {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        width: 100%;
+        width: 90%;
         height: 100%;     
         background-repeat: no-repeat;
         background-position: center;
