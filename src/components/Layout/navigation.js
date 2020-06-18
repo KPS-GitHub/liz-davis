@@ -23,7 +23,10 @@ const Wrap = styled.div`
   }
   .service-item {
     position: relative;
-    width: 10.5rem;
+    width: 10rem;
+    &.prof {
+      width: 12rem;
+    }
     .drop-parent {      
       position: relative;
       top: 12px;
@@ -38,6 +41,7 @@ const Wrap = styled.div`
     }
     button {
       position: absolute;
+      z-index: 100;
       right: -3px;
       background: none;
       border: none;
@@ -72,13 +76,17 @@ const Wrap = styled.div`
 
 const Navigation =  ({ services }) => {
   const [serviceOpen, setServiceOpen] = useState(false)
+  const [profOpen, setProfOpen] = useState(false)
   const toggleServiceDrop = () => {
     setServiceOpen(!serviceOpen)
+  }
+  const toggleProfDrop = () => {
+    setProfOpen(!profOpen)
   }
   const dropClosedStyle = {
     position: 'absolute',
     zIndex: 0,
-    top: '-20rem',
+    top: '-25rem',
     opacity: 0,
     transition: 'all 0.5s ease'
   }
@@ -101,6 +109,7 @@ const Navigation =  ({ services }) => {
           <FaCaretDown />
         </button>
         <div className="service-drop" style={serviceOpen ? dropOpenStyle : dropClosedStyle}>
+          <Link to={`/clinical-services-overview`}>Clinical Services Overview</Link>
           {services.map((service, i) => {
             const servId = service.title.toLowerCase().replace(/\s+/g, '-');            
             return(
@@ -109,7 +118,20 @@ const Navigation =  ({ services }) => {
           })}
         </div>
       </div>
-      <Link className="menu-item" to="/professional-services">Professional Services</Link>
+      <div className="service-item prof">
+        <Link to="/professional-services" className="drop-parent">
+          {`Professional Services `}          
+        </Link>
+        <button onClick={() => toggleProfDrop()}>
+          <FaCaretDown />
+        </button>
+        <div className="service-drop" style={profOpen ? dropOpenStyle : dropClosedStyle}>
+          <Link to={`/professional-services`}>Professional Services Overview</Link>
+          <Link to={`/consultation`}>Consultation</Link>
+          <Link to={`/training`}>Training</Link>
+        </div>
+      </div>
+      {/* <Link className="menu-item" to="/professional-services">Professional Services</Link> */}
       <Link className="menu-item" to="/intensive-retreats">Intensive Retreats</Link>
       <Link className="menu-item" to="/training">Training</Link>
       <Link className="menu-item" to="/contact">Contact</Link>

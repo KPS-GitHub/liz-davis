@@ -24,6 +24,11 @@ const Wrap = styled.div`
         }
         button {
             width: 50%;
+            background: none;
+            border: none;
+            :hover {
+              background: lightGray;
+            }
         }
     }
 `
