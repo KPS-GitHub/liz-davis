@@ -33,8 +33,7 @@ const Wrap = styled.div`
     }
 `
  
-export default class extends React.Component {
-  render() {
+const Testimonials = ({ testims }) => {
     return (
         <Wrap>
             {/* <h3>Testimonials</h3> */}
@@ -44,14 +43,15 @@ export default class extends React.Component {
                 totalSlides={3}
             >
                 <Slider>
-                <Slide index={0}><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p><p>-Customer Name</p></Slide>
-                <Slide index={1}><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p><p>-Customer Name</p></Slide>
-                <Slide index={2}><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p><p>-Customer Name</p></Slide>
+                  {testims.map ((testim, i) => {
+                    return <Slide index={i}><p>{testim.whatTheySaid.whatTheySaid}</p><p>{testim.customerName}</p></Slide>
+                  })}
                 </Slider>
                 <ButtonBack>{`<`}</ButtonBack>
                 <ButtonNext>{`>`}</ButtonNext>
             </CarouselProvider>
         </Wrap>
     );
-  }
 }
+
+export default Testimonials
