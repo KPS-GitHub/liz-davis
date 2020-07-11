@@ -29,6 +29,8 @@ const ContentDiv = styled.div`
 const HomePage = ({ data }) => {
     const serviceData = data.services.edges.map(p => p.node);
     const tileData = data.tiles.edges.map(p => p.node);
+    const testimonialsData = data.testims.edges.map(p => p.node);
+    console.log(testimonialsData)
     return (
       <Layout >
         <div style={{ background: 'white' }}>
@@ -51,7 +53,7 @@ const HomePage = ({ data }) => {
               </Row>
             </Container>
 
-            <Testimonials />
+            <Testimonials testims={testimonialsData} />
 
           </ContentDiv>
         </div>
@@ -105,6 +107,16 @@ export const pageQuery = graphql`
             title
             slug
           }
+        }
+      }
+    }
+    testims: allContentfulTestimonial {
+      edges {
+        node {
+          whatTheySaid {
+            whatTheySaid
+          }
+          customerName
         }
       }
     }
